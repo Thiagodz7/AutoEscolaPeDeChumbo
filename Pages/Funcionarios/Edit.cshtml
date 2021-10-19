@@ -1,0 +1,76 @@
+﻿@page
+@model AutoEscolaPeDeChumbo.Pages.Funcionarios.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 style="color: rebeccapurple">Editar</h1>
+
+<h4 style="color: rebeccapurple">Funcionario</h4>
+<hr />
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Funcionario.ID" />
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label asp-for="Funcionario.funcionario" class="control-label"></label>
+                <input asp-for="Funcionario.funcionario" class="form-control" />
+                <span asp-validation-for="Funcionario.funcionario" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-5">
+            <div class="form-group">
+                <label asp-for="Funcionario.cpf" class="control-label"></label>
+                <input asp-for="Funcionario.cpf" class="form-control" />
+                <span asp-validation-for="Funcionario.cpf" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-2">
+            <div class="form-group">
+                <label asp-for="Funcionario.idade" class="control-label"></label>
+                <input asp-for="Funcionario.idade" class="form-control" />
+                <span asp-validation-for="Funcionario.idade" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="form-group">
+                <label asp-for="Funcionario.dependentes" class="control-label"></label>
+                <input asp-for="Funcionario.dependentes" class="form-control" />
+                <span asp-validation-for="Funcionario.dependentes" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="form-group">
+                <label asp-for="Funcionario.salBruto" class="control-label"></label>
+                <input asp-for="Funcionario.salBruto" class="form-control" />
+                <span asp-validation-for="Funcionario.salBruto" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <label asp-for="Funcionario.cargo" class="control-label"></label>
+                <input asp-for="Funcionario.cargo" class="form-control" />
+                <span asp-validation-for="Funcionario.cargo" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Salvar" class="btn btn-Thiago" style="color:white" />
+    </div>
+</form>
+
+
+<div>
+    <a asp-page="./Index">Voltar para lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

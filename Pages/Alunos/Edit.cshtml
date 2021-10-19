@@ -1,0 +1,70 @@
+﻿@page
+@model AutoEscolaPeDeChumbo.Pages.Alunos.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 style="color: rebeccapurple">Editar</h1>
+
+<h4 style="color: rebeccapurple">Aluno</h4>
+<hr />
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Aluno.ID" />
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label asp-for="Aluno.funcionario" class="control-label"></label>
+                <input asp-for="Aluno.funcionario" class="form-control" />
+                <span asp-validation-for="Aluno.funcionario" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-5">
+            <div class="form-group">
+                <label asp-for="Aluno.cpf" class="control-label"></label>
+                <input asp-for="Aluno.cpf" class="form-control" />
+                <span asp-validation-for="Aluno.cpf" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-2">
+            <div class="form-group">
+                <label asp-for="Aluno.idade" class="control-label"></label>
+                <input asp-for="Aluno.idade" class="form-control" />
+                <span asp-validation-for="Aluno.idade" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="form-group">
+                <label asp-for="Aluno.saldo" class="control-label"></label>
+                <input asp-for="Aluno.saldo" class="form-control" />
+                <span asp-validation-for="Aluno.saldo" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Aluno.possuiCNH" /> @Html.DisplayNameFor(model => model.Aluno.possuiCNH)
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Salvar" class="btn btn-Thiago" style="color:white" />
+    </div>
+</form>
+
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

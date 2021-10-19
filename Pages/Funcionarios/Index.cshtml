@@ -1,0 +1,66 @@
+﻿@page
+@model AutoEscolaPeDeChumbo.Pages.Funcionarios.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="color:rebeccapurple">Funcionários</h1>
+
+<p>
+    <a style="color:rebeccapurple" asp-page="Create">Criar Novo</a>
+</p>
+<table class="table">
+    <thead style="color: rebeccapurple; border-color: rebeccapurple">
+        <tr style="border-color: rebeccapurple">
+            <th style="border-color:rebeccapurple">
+                @Html.DisplayNameFor(model => model.Funcionario[0].funcionario)
+            </th>
+            <th style="border-color: rebeccapurple">
+                @Html.DisplayNameFor(model => model.Funcionario[0].cpf)
+            </th>
+            <th style="border-color: rebeccapurple">
+                @Html.DisplayNameFor(model => model.Funcionario[0].idade)
+            </th>
+            <th style="border-color: rebeccapurple">
+                @Html.DisplayNameFor(model => model.Funcionario[0].dependentes)
+            </th>
+            <th style="border-color: rebeccapurple">
+                @Html.DisplayNameFor(model => model.Funcionario[0].salBruto)
+            </th>
+            <th style="border-color: rebeccapurple">
+                @Html.DisplayNameFor(model => model.Funcionario[0].cargo)
+            </th>
+            <th style="border-color: rebeccapurple"></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Funcionario) {
+        <tr>
+            <td style="border-color: rebeccapurple">
+                @Html.DisplayFor(modelItem => item.funcionario)
+            </td>
+            <td style="border-color: rebeccapurple">
+                @Html.DisplayFor(modelItem => item.cpf)
+            </td>
+            <td style="border-color: rebeccapurple">
+                @Html.DisplayFor(modelItem => item.idade)
+            </td>
+            <td style="border-color: rebeccapurple">
+                @Html.DisplayFor(modelItem => item.dependentes)
+            </td>
+            <td style="border-color: rebeccapurple">
+                @Html.DisplayFor(modelItem => item.salBruto)
+            </td>
+            <td style="border-color: rebeccapurple">
+                @Html.DisplayFor(modelItem => item.cargo)
+            </td>
+            <td style="border-color: rebeccapurple">
+                <a asp-page="./Edit" asp-route-id="@item.ID">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Detalhes</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
